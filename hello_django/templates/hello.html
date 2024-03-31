@@ -1,0 +1,14 @@
+<!-- <h1>Hello from html</h1>
+<p>First line after html hello</p> -->
+
+{% for movie_obj in movies %}
+<h1>Title: {{movie_obj.title | lower}}</h1>
+<p>Summary: {{movie_obj.summary | default:'No data available'}}</p>
+<h3>Year: {{movie_obj.year}}</h3>
+
+{% if movie_obj.success %}
+    <p>Movie was a  great success</p>
+{% else %}
+    <p>Movie was failed</p>
+{% endif %}
+{% endfor %}
